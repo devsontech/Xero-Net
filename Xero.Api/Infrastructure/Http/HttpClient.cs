@@ -185,7 +185,7 @@ namespace Xero.Api.Infrastructure.Http
 
                 AddHeader("Authorization", oauthSignature);
             }
-            
+            request.Headers.Add("xero-tenant-id", User.Name);
             AddHeaders(request);
 
             request.UserAgent = !string.IsNullOrWhiteSpace(UserAgent) ? UserAgent : "Xero Api wrapper - " + Consumer.ConsumerKey;
